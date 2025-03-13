@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException, UseGuards } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Task } from './task.schema';
 import { CreateTaskDto } from './dtos/create-task.dto';
