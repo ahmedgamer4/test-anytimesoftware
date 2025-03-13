@@ -44,7 +44,9 @@ export class TasksService {
   }
 
   async findByUser(userId: string) {
-    return await this.taskModel.find({ user: userId }).exec();
+    return await this.taskModel
+      .find({ user: new Types.ObjectId(userId) })
+      .exec();
   }
 
   async update(taskId: string, dto: UpdateTaskDto) {
