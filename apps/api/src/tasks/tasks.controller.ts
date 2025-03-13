@@ -14,6 +14,7 @@ import { CreateTaskDto } from './dtos/create-task.dto';
 import { UpdateTaskDto } from './dtos/update-task.dto';
 import { ApiBearerAuth } from '@nestjs/swagger';
 import { JwtAuthGuard } from '@/auth/guards/jwt-auth/jwt-auth.guard';
+import { GetUser } from '@/auth/decorators/get-user.decorator';
 
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
@@ -27,7 +28,7 @@ export class TasksController {
   }
 
   @Get()
-  async findByUser(@Query('userId') userId: string) {
+  async findByUser(@GetUser() userId: string) {
     return await this.tasksService.findByUser(userId);
   }
 

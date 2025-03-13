@@ -5,8 +5,6 @@ import { CreateTaskDto } from './dtos/create-task.dto';
 import { UpdateTaskDto } from './dtos/update-task.dto';
 import { UsersService } from '@/users/users.service';
 import { Model, Types } from 'mongoose';
-import { JwtAuthGuard } from '@/auth/guards/jwt-auth/jwt-auth.guard';
-import { ApiBearerAuth } from '@nestjs/swagger';
 
 @Injectable()
 export class TasksService {
