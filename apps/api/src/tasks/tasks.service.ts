@@ -13,12 +13,11 @@ export class TasksService {
     private usersService: UsersService,
   ) {}
 
-  async create(dto: CreateTaskDto) {
+  async create(userId: string, dto: CreateTaskDto) {
     // if (new Date(dto.dueDate) < new Date()) {
     //   throw new Error('Due date cannot be in the past');
     // }
 
-    const { userId } = dto;
     if (!Types.ObjectId.isValid(userId)) {
       throw new Error('Invalid user ID format');
     }
@@ -44,6 +43,7 @@ export class TasksService {
   async findByUser(userId: string) {
     return await this.taskModel
       .find({ user: new Types.ObjectId(userId) })
+      .populate('category', 'name')
       .exec();
   }
 

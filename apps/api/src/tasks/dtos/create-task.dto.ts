@@ -23,9 +23,6 @@ export class CreateTaskDto {
   dueDate: Date;
 
   @ApiProperty()
-  @IsMongoId()
-  userId: string;
-
   @IsOptional()
   @IsMongoId()
   category?: string;

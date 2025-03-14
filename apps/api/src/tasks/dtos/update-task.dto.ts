@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDate, IsOptional, IsString } from 'class-validator';
+import { IsDateString, IsMongoId, IsOptional, IsString } from 'class-validator';
 
 export class UpdateTaskDto {
   @ApiProperty()
@@ -14,11 +14,16 @@ export class UpdateTaskDto {
 
   @ApiProperty()
   @IsOptional()
-  @IsDate()
+  @IsDateString()
   dueDate?: Date;
 
   @ApiProperty()
   @IsOptional()
   @IsString({ groups: ['pending', 'completed'] })
   status?: 'pending' | 'completed';
+
+  @ApiProperty()
+  @IsOptional()
+  @IsMongoId()
+  category?: string;
 }

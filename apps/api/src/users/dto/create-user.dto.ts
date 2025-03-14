@@ -16,7 +16,10 @@ export class CreateUserDto {
   @MinLength(8)
   password: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    example: 'https://www.linkedin.com/in/johndoe',
+    required: false,
+  })
   @IsUrl()
-  linkedInUrl: string;
+  linkedinUrl?: string;
 }
