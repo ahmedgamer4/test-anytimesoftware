@@ -29,8 +29,6 @@ export function LoginForm() {
 
   async function onSubmit(data: LoginInput) {
     const res = await loginUser(data);
-    console.log(res)
-    console.log(res.data);
     if (res?.status !== 200)
       form.setError("root", { message: res?.data.message });
     else {

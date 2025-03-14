@@ -31,7 +31,6 @@ export function RegisterForm() {
 
   async function onSubmit(data: RegisterInput) {
     const res = await registerUser(data);
-    console.log(res?.data);
     if (res?.status !== 201)
       form.setError("root", { message: res?.data.message });
     else {
@@ -45,6 +44,11 @@ export function RegisterForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="border p-6 rounded-xl space-y-3 w-full mb-3"
       >
+        <h1 className="text-xl font-bold">Create a New Account</h1>
+        <p className="text-sm text-gray-700">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
+          sed.
+        </p>
         <div className="text-red-500 text-sm">
           {form.formState.errors.root?.message}
         </div>
@@ -105,6 +109,12 @@ export function RegisterForm() {
           )}
         />
         <Button className="w-full">Sign Up</Button>
+        <p className="text-gray-700 text-sm">
+          Already have an account?{" "}
+          <a className="text-blue-500" href={"/login"}>
+          Login
+          </a>
+        </p>
       </form>
     </Form>
   );
