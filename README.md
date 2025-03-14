@@ -6,8 +6,8 @@ This is a **Task Management Application** built using **Next.js, NestJS, MongoDB
 
 ## Tech Stack
 
-- **Frontend:** Next.js, TypeScript, Redux, Tailwind CSS, ShadCN UI
-- **Backend:** NestJS, MongoDB, Puppeteer
+- **Frontend:** React 19,Next.js 15, TypeScript 5, Tailwind CSS, ShadCN UI
+- **Backend:** NestJS 11, MongoDB, Puppeteer
 - **Authentication:** JWT-based authentication
 
 ## Setup Instructions
