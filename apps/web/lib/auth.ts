@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { BACKEND_URL } from "./constrants";
+import { BACKEND_URL } from "./constants";
 import axios, { AxiosError } from "axios";
 import { createSession } from "./session";
 
